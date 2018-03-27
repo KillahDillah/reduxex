@@ -7,7 +7,7 @@ function Main(props){
     <div>
       <h1>Counter</h1>
       <p>Count: {props.count}</p>
-      <button>increment</button>
+      <button onClick={props.onIncClick}>increment</button>
     </div>
   )
 }
@@ -19,4 +19,12 @@ function mapStateToProps(state){  // will use {connect} with function to post to
   }
 }
 
-export default connect (mapStateToProps)(Main);  //creates a new component which hooks up mapStateToProps function to Main.js, then export
+function mapDispatchProps(dispatch){
+  return {
+    onIncClick: ()=>{   //the function when button is clicked
+      console.log('click')
+    }
+  }
+}
+
+export default connect (mapStateToProps, mapDispatchProps)(Main);  //creates a new component which hooks up mapStateToProps function to Main.js, then export
