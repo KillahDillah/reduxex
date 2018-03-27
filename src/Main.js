@@ -7,7 +7,7 @@ function Main(props){
     <div>
       <h1>Counter</h1>
       <p>Count: {props.count}</p>
-      <button onClick={props.onIncClick}>increment</button>
+      <button onClick={props.onIncClick}>increase</button>
     </div>
   )
 }
@@ -21,8 +21,10 @@ function mapStateToProps(state){  // will use {connect} with function to post to
 
 function mapDispatchProps(dispatch){
   return {
-    onIncClick: ()=>{   //the function when button is clicked
+    onIncClick: ()=>{   //the function when button is clicked in Main.js
       console.log('click')
+      const action = {type: 'INCREMENT'}  //actions are objects that have a property called type - create string now, reference it later as data is passed into it
+      dispatch(action);  //now pushing data to the store.js aka reducer
     }
   }
 }
