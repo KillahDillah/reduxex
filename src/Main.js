@@ -24,7 +24,7 @@ function mapDispatchProps(dispatch){
     onIncClick: ()=>{   //the function when button is clicked in Main.js
       console.log('click')
       const action = {type: 'INCREMENT'}  //actions are objects that have a property called type - create string now, reference it later as data is passed into it
-      dispatch(action);  //now pushing data to the store.js aka reducer
+      dispatch(action);  //now pushing(dispatching) data to the store.js (reducer)
     }
   }
 }
